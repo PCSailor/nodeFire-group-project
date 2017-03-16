@@ -1,41 +1,9 @@
-/*
-
-########  ######## ########  ##          ###     ######  ########
-##     ## ##       ##     ## ##         ## ##   ##    ## ##
-##     ## ##       ##     ## ##        ##   ##  ##       ##
-########  ######   ########  ##       ##     ## ##       ######
-##   ##   ##       ##        ##       ######### ##       ##
-##    ##  ##       ##        ##       ##     ## ##    ## ##
-##     ## ######## ##        ######## ##     ##  ######  ########
-
-######## ##     ## ####  ######
-   ##    ##     ##  ##  ##    ##
-   ##    ##     ##  ##  ##
-   ##    #########  ##   ######
-   ##    ##     ##  ##        ##
-   ##    ##     ##  ##  ##    ##
-   ##    ##     ## ####  ######
-
-   ######## #### ##       ########
-   ##        ##  ##       ##
-   ##        ##  ##       ##
-   ######    ##  ##       ######
-   ##        ##  ##       ##
-   ##        ##  ##       ##
-   ##       #### ######## ########
-
-*/
-
-// You will need to update these with your own values
-// Do not copy the script tags into here, just the config part
-
-/////////////////////////////////////////////////////////
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAU9OZTcXLQpS0VheZz7Xy-UpqLGBKlXlY",
-  authDomain: "sigma-test-run.firebaseapp.com",
-  databaseURL: "https://sigma-test-run.firebaseio.com",
-  storageBucket: "sigma-test-run.appspot.com",
-  messagingSenderId: "279228406571"
-};
-firebase.initializeApp(config);
+// Initialize Firebase - points us to right domain on Firebase
+ var config = {
+   apiKey: "AIzaSyAI3hgGtMLGNzSxDRZjPXRqgNu7hsy7TN0", // NOTE: Who am I
+   authDomain: "phi-firebase-demo-50a0f.firebaseapp.com",  // NOTE: auth domain
+   databaseURL: "https://phi-firebase-demo-50a0f.firebaseio.com",
+   storageBucket: "phi-firebase-demo-50a0f.appspot.com",
+   messagingSenderId: "26720052995"
+ };
+ firebase.initializeApp(config);

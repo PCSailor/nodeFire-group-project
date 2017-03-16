@@ -1,3 +1,5 @@
+// NOTE: decoder.js for authentication
+// NOTE: private-date.js for authorization
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
@@ -18,7 +20,8 @@ router.get("/", function(req, res){
         res.sendStatus(403);
       } else {
         // Based on the clearance level of the individual, give them access to different information
-        Secret.find({ secrecyLevel: { $lte: user.clearanceLevel } }, function (err, secrets){
+        Secret.find({ secrecyLevel: { $lte: user.clearanceLevel } }, function (err, secrets){ // NOTE:  Mongoose callback function
+
           if (err) {
             console.log('Error COMPLETING secrecyLevel query task', err);
             res.sendStatus(500);

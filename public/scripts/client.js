@@ -20,7 +20,7 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
     // firebaseUser will be null if not logged in
     if(firebaseUser) {
       // This is where we make our call to our server
-      firebaseUser.getToken().then(function(idToken){
+      firebaseUser.getToken().then(function(idToken){ // NOTE: Promise with callback
         $http({
           method: 'GET',
           url: '/privateData',
@@ -37,6 +37,14 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
     }
 
   });
+
+// NOTE: some trigger for click
+self.trigger () {
+  auth.$onAuthStateChanged
+}
+
+
+
 
   // This code runs when the user logs out
   self.logOut = function(){
