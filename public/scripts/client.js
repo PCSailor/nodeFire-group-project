@@ -38,9 +38,42 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
 
   });
 
-// NOTE: some trigger for click
-self.trigger () {
-  auth.$onAuthStateChanged
+// this object is linked to the inputs
+self.newSecret = {
+  secretText: '',
+  secrecyLevel: 0
+};
+
+// // NOTE: some trigger for click
+self.addSecret = function() {
+  console.log('add secret clicked');
+  auth.$onAuthStateChanged(function(firebaseUser){
+    console.log('log from line 51');
+    // firebaseUser will be null if not logged in
+    if(firebaseUser) {
+      var secretObject = self.newSecret;
+      // This is where we make our call to our server
+      firebaseUser.getToken().then(function(idToken){ // NOTE: Promise with callback
+        $http({
+          method: 'POST',
+          url: '/privateData',
+          data: secretObject,
+          headers: {
+            id_token: idToken
+          }
+        }).then(function(response){
+          console.log('response from addSecret is:', response);
+          self.newSecret = {
+            secretText: '',
+            secrecyLevel: 0
+          };
+        });
+      });
+    } else {
+      console.log('Not logged in or not authorized.');
+      self.secretData = [];
+    }
+  });
 }
 
 

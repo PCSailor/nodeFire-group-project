@@ -32,6 +32,20 @@
         </th>
       </tr>
     </thead>
+
+
+
+    <input type="text" ng-model="sc.newSecret.secretText">
+    <select id="secrecyLevel" ng-model="sc.newSecret.secrecyLevel" ng-options="level for level in [1,2,3,4,5]"></select>
+    <button ng-click="sc.addSecret()">CLICKINNN</button>
+
+
+
+
+
+
+
+
     <tbody>
       <tr ng-repeat="secret in sc.secretData">
         <td>
@@ -40,8 +54,10 @@
         <td>
           {{secret.secretText}}
         </td>
+
       </tr>
     </tbody>
   </table>
+
 </body>
 </html>
