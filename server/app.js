@@ -21,6 +21,7 @@ mongoConnection.connect();
 app.use(decoder.token); // decoding the firebase token
 
 
+
 // NOTE: * Whatever you do below this is protected by your authentication. */
 
 // This is the route for your secretData. The request gets here after it has been authenticated.

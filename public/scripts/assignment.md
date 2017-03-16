@@ -6,12 +6,14 @@ Base Mode - Authenticated Post
 Allow an authenticated user to create a new secret.
 
 If the user is logged in, they will see a form that allows them to add a new secret. The server should confirm (with the id token) that the user is authenticated, and then allow the secret to be added to the database.
+
 Hard Mode - Authorized Post
 The new secrets a user creates should only have a secrecy level at or below the clearance level of the current user. This will need to be done with an authenticated post that sends a token. Any logic to determine the clearance level of the user should be done on the backend (because if it is done on the front end, it is not actually secure. Examples:
 
 If Huck has a clearance level of 5, he can create new secret with a secrecy level of 1, 2, 3, 4, or 5.
 If Kris has a clearance level of 3, he can create new secret with a secrecy level of 1, 2, or 3.
 If Luke has a clearance level of 3, he can create new secret with a secrecy level of 1, 2, or 3.
+
 Pro Mode
 Your site needs another view. Create a second route and view on the front end that is available only to users who are authenticated. Examples:
 
