@@ -40,29 +40,41 @@ router.get("/", function(req, res){
 // post to db
 router.post("/", function(req, res){
   // var userEmail = req.decodedToken.email;
-// console.log(userEmail);
-console.log(req.body);
+  // console.log(userEmail);
+  console.log(req.body);
 
 
 
-  var secretObject = req.body;
-  var addedSecret = new Secret({
-    secretText: secretObject.secretText,
-    secrecyLevel: secretObject.secrecyLevel
-  });
+  // var secretObject = req.body;
+  // var addedSecret = new Secret({
+  //   secretText: secretObject.secretText,
+  //   secrecyLevel: secretObject.secrecyLevel
+  // });
 
   // Check the user's level of permision based on their email
   // User.findOne({ email: userEmail }, function (err, user) {
-  Secret.insert({ addedSecret }, function (err, secret) {
-    if (err) {
-      // console.log('Error COMPLETING clearanceLevel query task', err);
-      console.log('Error new object', err);
-          res.sendStatus(500);
-        } else {
-          // return all of the results where a specific user has permission
-          res.send(secret);
-        }
-      });
+
+  // Secret.insert({ addedSecret }, function (err, secret) {
+  // // Secret.insert( addedSecret, function (err, secret) {
+  // Secret.save({ addedSecret}, function (err, secret) {
+
+
+
+  var addedSecret = new Secret(req.body);
+   console.log(addedSecret);
+   addedSecret.save(function(err, data) {
+     console.log('save data:', data);
+     if(err) {
+       console.log('ERR: ', err);
+       res.sendStatus(500);
+     } else {
+       res.sendStatus(201);
+     }
+   });
+
+
+
+
 
     //   res.sendStatus(500);
     // } else {
