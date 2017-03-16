@@ -54,6 +54,7 @@ self.addSecret = function() {
       var secretObject = self.newSecret;
       // This is where we make our call to our server
       firebaseUser.getToken().then(function(idToken){ // NOTE: Promise with callback
+        // console.log(idToken);
         $http({
           method: 'POST',
           url: '/privateData',

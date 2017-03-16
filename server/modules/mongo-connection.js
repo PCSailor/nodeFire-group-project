@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var connectionString = require('./database-config');
 
 var connectToMongoDatabase = function() {
+  mongoose.Promise = global.Promise;
   mongoose.connect(connectionString);
 
   mongoose.connection.on('connected', function () {
