@@ -19,6 +19,7 @@ Your site needs another view. Create a second route and view on the front end th
 
 If a user logs in, they will see a link to a users view. Ideally, this route will be /#/users
 If a user is not logged in and attempts to navigate to /#/admin, they should be redirected to the login page
+
 Ultra-Pro Mode
 Now that you have a second view, your http requests should be moved into factories. Ideally, your factories will look like:
 

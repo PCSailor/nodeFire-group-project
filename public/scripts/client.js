@@ -1,4 +1,4 @@
-var app = angular.module("sampleApp", ["firebase"]);
+var app = angular.module("sampleApp", ["firebase", "ngRoute"]);
 app.controller("SampleCtrl", function($firebaseAuth, $http) {
   var auth = $firebaseAuth();
   var self = this;
@@ -11,6 +11,12 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
       console.log("Authentication failed: ", error);
     });
   };
+
+// NOTE: Pro Mode Started
+// app.config(['$routeProvider', function($routeProvider) {
+// $routeProvider
+// }]);
+
 
   // This code runs whenever the user changes authentication states
   // e.g. whevenever the user logs in or logs out
